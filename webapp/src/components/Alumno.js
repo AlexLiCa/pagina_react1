@@ -1,6 +1,6 @@
 import React from "react";
-import Titulo  from "./Titulo"
-
+//import Titulo  from "./Titulo"
+import {TituloRojo, TituloVerde} from "./Titulo"
 
 //creamos un componente usando funciones flecha
 // (): aqui ponemos los parametros
@@ -13,7 +13,8 @@ const Alumno = () => {
 
     return (
       <>
-       <Titulo/>
+       <TituloRojo/>
+       <TituloVerde/>
         {apellido && <p style={{ color: "green", textAlign: "center", fontSize: "3rem" }}>Tu apellido es: {apellido} </p>}
 
         <h3 style={{ color: "tomato", textAlign: "center"}}>Lista de alumnos </h3>
