@@ -13,8 +13,7 @@ const Alumno = () => {
 
     return (
       <>
-       <TituloRojo/>
-       <TituloVerde/>
+       <TituloRojo alumno="Raul" matricula="193029" color="red"/>
         {apellido && <p style={{ color: "green", textAlign: "center", fontSize: "3rem" }}>Tu apellido es: {apellido} </p>}
 
         <h3 style={{ color: "tomato", textAlign: "center"}}>Lista de alumnos </h3>
