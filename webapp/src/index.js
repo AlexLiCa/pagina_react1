@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Alumno from "./components/Alumno"
+import Alumno  from "./components/Alumno"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

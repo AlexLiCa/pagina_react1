@@ -1,5 +1,5 @@
 import React from "react";
-
+import Titulo  from "./Titulo"
 
 
 //creamos un componente usando funciones flecha
@@ -8,21 +8,18 @@ import React from "react";
 
 const Alumno = () => {
 
-    const name = "Alejandro";
     const apellido = ""
-    const alumnos =["Mauro","Andrea", "Aldo", "Abrhaham"]
+    const alumnos =["Mauro","Andrea", "Aldo", "Abrhaham", "Hola"]
 
     return (
       <>
-        <h1 className="titulo" style={{ color: "blue", textAlign: "center", fontSize: "4rem" }}>
-          Hola {name}
-        </h1>
+       <Titulo/>
         {apellido && <p style={{ color: "green", textAlign: "center", fontSize: "3rem" }}>Tu apellido es: {apellido} </p>}
 
         <h3 style={{ color: "tomato", textAlign: "center"}}>Lista de alumnos </h3>
         <ul style={{ color: "tomato", textAlign: "center"}}>
           {alumnos.map((nombre,i)=>{
-            return <li key={i}> {i} {nombre}</li>;
+            return <li key={i}> {nombre}</li>;
           })}
         </ul>
       </>
