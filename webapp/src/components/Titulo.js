@@ -7,6 +7,8 @@ const TituloVerde = ({alumno, matricula, color}) => {
         </h1>
     );
 }
+
+
 const TituloRojo = ({alumno, matricula, color}) => {
     return (
         <h1 className="titulo" style={{ color: color, textAlign: "center", fontSize: "4rem" }}>

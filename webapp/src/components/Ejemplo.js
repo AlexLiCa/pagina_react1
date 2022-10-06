@@ -6,7 +6,7 @@ import {TituloRojo, TituloVerde} from "./Titulo"
 // (): aqui ponemos los parametros
 // {}: aqui ponemos el codigo
 
-const Alumno = () => {
+const Ejemplo = () => {
 
     const apellido = ""
     const alumnos =["Mauro","Andrea", "Aldo", "Abrhaham", "Hola"]
@@ -26,4 +26,4 @@ const Alumno = () => {
     )
 };
 
-export default Alumno;
+export default Ejemplo;

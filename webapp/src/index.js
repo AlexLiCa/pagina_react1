@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Alumno  from "./components/Alumno"
+import Ejemplo  from "./components/Ejemplo"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -11,7 +11,7 @@ const jsx = (
   <>
     {session === true ? (
       <>
-      <Alumno/>  {/* Invocamos a nuestro componente como HTML pero podemos cerrar al final del componente*/}
+      <Ejemplo/>  {/* Invocamos a nuestro componente como HTML pero podemos cerrar al final del componente*/}
       </>
     ) : ( //aqui se pone cuando la conducion no se cumple 
       <>
