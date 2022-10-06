@@ -18,10 +18,10 @@ const TituloRojo = ({alumno, matricula, color}) => {
     );
 }
 
-const Titulo = ({alumno, matricula, color}) => {
+const Titulo = ({texto, color, tamaño, alineado}) => {
     return (
-        <h1 className="titulo" style={{ color: color, textAlign: "center", fontSize: "4rem" }}>
-          Hola {alumno} con id de {matricula}
+        <h1 className="titulo" style={{ color: color, textAlign:alineado, fontSize:tamaño }}>
+          {texto}
         </h1>
 
     );
