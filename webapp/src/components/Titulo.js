@@ -18,4 +18,13 @@ const TituloRojo = ({alumno, matricula, color}) => {
     );
 }
 
-export {TituloRojo, TituloVerde};
+const Titulo = ({alumno, matricula, color}) => {
+    return (
+        <h1 className="titulo" style={{ color: color, textAlign: "center", fontSize: "4rem" }}>
+          Hola {alumno} con id de {matricula}
+        </h1>
+
+    );
+}
+
+export {Titulo, TituloVerde};

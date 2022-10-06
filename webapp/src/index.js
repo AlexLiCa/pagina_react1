@@ -11,7 +11,7 @@ const jsx = (
   <>
     {session === true ? (
       <>
-      <Ejemplo/>  {/* Invocamos a nuestro componente como HTML pero podemos cerrar al final del componente*/}
+       <Ejemplo/>{/* Invocamos a nuestro componente como HTML pero podemos cerrar al final del componente*/}
       </>
     ) : ( //aqui se pone cuando la conducion no se cumple 
       <>

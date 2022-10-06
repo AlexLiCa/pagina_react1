@@ -1,6 +1,9 @@
 import React from "react";
 //import Titulo  from "./Titulo"
-import {TituloRojo, TituloVerde} from "./Titulo"
+import {Titulo} from "./Titulo"
+import Alumno from "./Alumno"
+
+
 
 //creamos un componente usando funciones flecha
 // (): aqui ponemos los parametros
@@ -13,15 +16,12 @@ const Ejemplo = () => {
 
     return (
       <>
-       <TituloRojo alumno="Alejandro" matricula="193029" color="purple"/>
+       <Titulo alumno="Cova" matricula="193029" color="purple"/>
         {apellido && <p style={{ color: "green", textAlign: "center", fontSize: "3rem" }}>Tu apellido es: {apellido} </p>}
-
-        <h3 style={{ color: "tomato", textAlign: "center"}}>Lista de alumnos </h3>
-        <ul style={{ color: "tomato", textAlign: "center"}}>
+        <h3 style={{ color: "tomato", textAlign: "center", fontSize: "3rem"}}>Lista de alumnos</h3>
           {alumnos.map((nombre,i)=>{
-            return <li key={i}> {nombre}</li>;
+            return <Alumno alumno={nombre} matricula={i}/>;
           })}
-        </ul>
       </>
     )
 };
