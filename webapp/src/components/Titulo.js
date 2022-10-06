@@ -20,11 +20,12 @@ const TituloRojo = ({alumno, matricula, color}) => {
 
 const Titulo = ({texto, color, tamaño, alineado}) => {
     return (
-        <h1 className="titulo" style={{ color: color, textAlign:alineado, fontSize:tamaño }}>
+        <h1 className="titulo" style={{ color: color, textAlign:alineado, fontSize:tamaño}}>
           {texto}
         </h1>
 
     );
 }
+
 
 export {Titulo, TituloVerde};
