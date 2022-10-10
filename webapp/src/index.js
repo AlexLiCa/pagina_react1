@@ -1,31 +1,68 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
 import Ejemplo  from "./components/Ejemplo"
+import {Titulo}  from "./components/Titulo"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
-const session = true;
-
-const jsx = (
-  <>
-    {session === true ? (
+const App = () => {
+  const[sesion, cambiarSesion] = useState(true);
+  const[cuenta, cambiarCuenta] = useState(0);
+  //let sesion = true;
+  // const cambiarSesion = () =>{
+  //   console.log(sesion)
+  //   sesion = false;
+  //   console.log(sesion)
+  // };
+    return (
       <>
-       <Ejemplo/>{/* Invocamos a nuestro componente como HTML pero podemos cerrar al final del componente*/}
-      </>
-    ) : ( //aqui se pone cuando la conducion no se cumple 
-      <>
-        <h1 style={{ color: "blue", textAlign: "center", fontSize: "4rem" }}>
-          No has iniciado sesion
+      {sesion === true ? (
+        <>
+        <Ejemplo/>{/* Invocamos a nuestro componente como HTML pero podemos cerrar al final del componente*/}
+        <button onClick={() => cambiarSesion(false) }>Cerrar session</button>
+        <h1>
+          <Titulo texto = {cuenta} color = "green" alineado="center" tamaño ="2rem"/>
+          <button onClick={() => cambiarCuenta(cuenta+1) }>Aumentar cuenta</button>
+          <button onClick={() => cambiarCuenta(cuenta-1) }>Reducir cuenta</button>
+          <button onClick={() => cambiarCuenta(cuenta*2) }>Multiplicar cuenta por 2</button>
+          <button onClick={() => cambiarCuenta(cuenta/2) }>Dividir cuenta entre 2</button>
         </h1>
+        </>
+      ) : ( //aqui se pone cuando la conducion no se cumple 
+        <>
+          <h1 style={{ color: "blue", textAlign: "center", fontSize: "4rem" }}>
+            No has iniciado sesion
+          </h1>
+          <button onClick={() => cambiarSesion(true) }>Iniciar session</button>
+        </>
+      )}
       </>
-    )}
-  </>
-);
+    )
+  }
+
+
+// const jsx = (
+
+//   <>
+//     {session === true ? (
+//       <>
+//        <Ejemplo/>{/* Invocamos a nuestro componente como HTML pero podemos cerrar al final del componente*/}
+//        <button onClick={cambiarSession} style={{textAlign: 'center'}}>Cerrar session</button>
+//       </>
+//     ) : ( //aqui se pone cuando la conducion no se cumple 
+//       <>
+//         <h1 style={{ color: "blue", textAlign: "center", fontSize: "4rem" }}>
+//           No has iniciado sesion
+//         </h1>
+//       </>
+//     )}
+//   </>
+// );
 
 //----------------------------------------------------------------
 //Inicio de react
 //----------------------------------------------------------------
 
-root.render(jsx);
+root.render(<App/>);
 

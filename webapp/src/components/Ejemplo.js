@@ -19,9 +19,7 @@ const Ejemplo = () => {
        <Titulo texto="Pagina con react" color="purple" tamaño="4rem" alineado="center"/>
         {apellido && <p style={{ color: "green", textAlign: "center", fontSize: "3rem" }}>Tu apellido es: {apellido} </p>}
         <h3 style={{ color: "tomato", textAlign: "center", fontSize: "2rem"}}>Lista de alumnos</h3>
-          {alumnos.map((nombre,i)=>{
-            return <Alumno alumno={nombre} matricula={i}/>;
-          })}
+          {alumnos.map((nombre,i)=><Alumno key={i} alumno={nombre} matricula={i} />)}
       </>
     )
 };
