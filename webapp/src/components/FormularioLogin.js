@@ -4,28 +4,59 @@ import React, {useState} from 'react';
 
 
 //sfc - snipet
-const FormularioLogin = () => {
+const FormularioLogin = (props) => {
   const[user, setUser] = useState("");
   const[password, setPassword] = useState("");
 
+  const onChangeUser = (e) => {
+    console.log(e.target.value)
+    setUser(e.target.value)
+  }
+
+  const onChangePassword = (e) => {
+    console.log(e.target.value)
+    setPassword(e.target.value)
+  }
+
+  const onChange = (e) => {
+    if (e.target.name === "name") {
+        console.log(e.target.value);
+        setUser(e.target.value);
+    }
+    else if (e.target.name === "password") {
+        console.log(e.target.value);
+        setPassword(e.target.value);
+    }
+  };
+
+  const onSubmit = (e) => {
+        console.log(e)
+        e.preventDefault();
+        if(user === "Alejandro" && password === "123"){
+            alert("coorecto")
+            props.cambiarSesion(true);
+        }
+        else{
+            alert("incorrecto")
+        }
+  }
+
+
     return ( 
-        <form action="">
+        <form action="" onSubmit={onSubmit}>
             <p>Usuario: {user}</p>
             <p>Password : {password}</p>
             <div>
-                <label htmlFor="user">
+                <label htmlFor="name">
                     User
                 </label>
                 {/* Formulario del login */}
                 <input 
                     type="text" 
-                    name="user" 
-                    id="user"
+                    name="name" 
+                    id="name"
                     value={user}
-                    onChange={(e) =>{
-                        console.log(e.target.value)
-                        setUser(e.target.value)
-                    }}
+                    onChange={onChange}
                     >
                 </input>
             </div>
@@ -39,12 +70,11 @@ const FormularioLogin = () => {
                     name="password" 
                     id="password"
                     value={password}
-                    onChange={(e) =>
-                        setPassword(e.target.value)
-                    }
+                    onChange={onChange}
                     >
                 </input>
             </div>
+          <button>Iniciar session</button>
         </form>
      );
 }

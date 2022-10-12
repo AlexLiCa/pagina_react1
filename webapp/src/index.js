@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
 const App = () => {
-  const[sesion, cambiarSesion] = useState(true);
+  const[sesion, cambiarSesion] = useState(false);
   const[cuenta, cambiarCuenta] = useState(0);
   //let sesion = true;
   // const cambiarSesion = () =>{
@@ -35,8 +35,8 @@ const App = () => {
           <h1 style={{ color: "", textAlign: "center", fontSize: "4rem" }}>
             No has iniciado sesion
           </h1>
-          <FormularioLogin/>
-          <button onClick={() => cambiarSesion(true) }>Iniciar session</button>
+          <FormularioLogin cambiarSesion={cambiarSesion}/>
+          {/* <button onClick={() => cambiarSesion(true) }>Iniciar session</button> */}
         </>
       )}
       </>
