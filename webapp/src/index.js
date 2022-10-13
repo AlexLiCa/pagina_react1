@@ -1,15 +1,18 @@
 import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
 import Ejemplo  from "./components/Ejemplo"
-import {Titulo}  from "./components/Titulo"
+import {Titulo}  from "./components/Titulo";
 import FormularioLogin from "./components/FormularioLogin";
+import FormularioRegistro from "./components/FormularrioRegistro";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
 const App = () => {
   const[sesion, cambiarSesion] = useState(false);
-  const[cuenta, cambiarCuenta] = useState(0);
+  const[registro, cambiarRegistro] = useState(true);
+  //const[cuenta, cambiarCuenta] = useState(0);
   //let sesion = true;
   // const cambiarSesion = () =>{
   //   console.log(sesion)
@@ -32,11 +35,18 @@ const App = () => {
         </>
       ) : ( //aqui se pone cuando la conducion no se cumple 
         <>
-          <h1 style={{ color: "", textAlign: "center", fontSize: "4rem" }}>
-            No has iniciado sesion
-          </h1>
-          <FormularioLogin cambiarSesion={cambiarSesion}/>
-          {/* <button onClick={() => cambiarSesion(true) }>Iniciar session</button> */}
+          {registro === false ? (
+            
+            <>
+            <Titulo texto="Registrarse" color="tomato" tamaño="3rem" alineado="left"/>
+            <FormularioRegistro cambiarRegistro={cambiarRegistro}/>
+            </>
+          ) : (
+            <>
+            <Titulo texto="Inicio de Sesion" color="tomato" tamaño="3rem" alineado="left"/>
+              <FormularioLogin cambiarSesion={cambiarSesion} cambiarRegistro={cambiarRegistro}/>
+            </>
+          )}
         </>
       )}
       </>

@@ -32,8 +32,8 @@ const FormularioLogin = (props) => {
   const onSubmit = (e) => {
         console.log(e)
         e.preventDefault();
-        if(user === "Alejandro" && password === "123"){
-            alert("coorecto")
+        if(user === "Alejandro Linares" && password === "123"){
+           // alert("correcto")
             props.cambiarSesion(true);
         }
         else{
@@ -75,6 +75,7 @@ const FormularioLogin = (props) => {
                 </input>
             </div>
           <button>Iniciar session</button>
+          <button onClick={() => props.cambiarRegistro(false)}>Registrarse</button>
         </form>
      );
 }
