@@ -25,11 +25,10 @@ const FormularioRegistro = (props) => {
         console.log(e)
         e.preventDefault();
         if(password === cpassword){
-            alert("Registro completado")
             props.cambiarRegistro(true);
         }
         else{
-            alert("incorrecto")
+            alert("Las contraseñas no coinciden")
         }
   }
 
