@@ -36,14 +36,13 @@ const App = () => {
       ) : ( //aqui se pone cuando la conducion no se cumple 
         <>
           {registro === false ? (
-            
             <>
-            <Titulo texto="Registrarse" color="tomato" tamaño="3rem" alineado="left"/>
-            <FormularioRegistro cambiarRegistro={cambiarRegistro}/>
+              <Titulo texto="Registrarse" color="tomato" tamaño="3rem" alineado="left"/>
+              <FormularioRegistro cambiarRegistro={cambiarRegistro}/>
             </>
           ) : (
             <>
-            <Titulo texto="Inicio de Sesion" color="tomato" tamaño="3rem" alineado="left"/>
+              <Titulo texto="Inicio de Sesion" color="tomato" tamaño="3rem" alineado="left"/>
               <FormularioLogin cambiarSesion={cambiarSesion} cambiarRegistro={cambiarRegistro}/>
             </>
           )}
