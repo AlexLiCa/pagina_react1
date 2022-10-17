@@ -1,5 +1,10 @@
 //imr - snipet
 import React, {useState} from 'react';
+import Boton from "../styles/boton"
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -38,6 +43,8 @@ const FormularioLogin = (props) => {
         }
         else{
             alert("incorrecto")
+            setUser("");
+            setPassword("")
         }
   }
 
@@ -74,8 +81,9 @@ const FormularioLogin = (props) => {
                     >
                 </input>
             </div>
-          <button>Iniciar session</button>
-          <button onClick={() => props.cambiarRegistro(false)}>Registrarse</button>
+          <Boton>Iniciar Sesion</Boton>
+          <Boton onClick={() => props.cambiarRegistro(false)}>Registrarse</Boton>
+          <Button variant="primary">Hola mundo</Button>
         </form>
      );
 }
