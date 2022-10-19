@@ -5,6 +5,7 @@ import {Titulo}  from "./components/Titulo";
 import FormularioLogin from "./components/FormularioLogin";
 import FormularioRegistro from "./components/FormularrioRegistro";
 import Boton from "./styles/boton"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

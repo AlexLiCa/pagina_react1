@@ -1,36 +1,43 @@
 //imr - snipet
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Boton from "../styles/boton"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 
 
 //sfc - snipet
 const FormularioLogin = (props) => {
   const[user, setUser] = useState("");
   const[password, setPassword] = useState("");
+  const[password2, setPassword2] = useState("");
+
+
+  useEffect ( () => {
+        console.log("Montando componente...");
+  }, []); //esta parte hace que solo se ejecute cuando recargamos la pagina 
 
   const onChangeUser = (e) => {
-    console.log(e.target.value)
+    //console.log(e.target.value)
     setUser(e.target.value)
   }
 
   const onChangePassword = (e) => {
-    console.log(e.target.value)
+    //console.log(e.target.value)
     setPassword(e.target.value)
   }
 
   const onChange = (e) => {
     if (e.target.name === "name") {
-        console.log(e.target.value);
+        //console.log(e.target.value);
         setUser(e.target.value);
     }
     else if (e.target.name === "password") {
-        console.log(e.target.value);
+        //console.log(e.target.value);
         setPassword(e.target.value);
+    }
+    else if (e.target.name === "password2") {
+        //console.log(e.target.value);
+        setPassword2(e.target.value);
     }
   };
 
@@ -59,7 +66,7 @@ const FormularioLogin = (props) => {
                 </label>
                 {/* Formulario del login */}
                 <input 
-                    type="text" 
+                    type="text"  
                     name="name" 
                     id="name"
                     value={user}
@@ -81,9 +88,23 @@ const FormularioLogin = (props) => {
                     >
                 </input>
             </div>
+            <div>
+                <label htmlFor="password2">
+                    Contraseña 2
+                </label>
+                {/* Formulario del password */}
+                <input 
+                    type="password" 
+                    name="password2" 
+                    id="password2"
+                    value={password2}
+                    onChange={onChange}
+                    >
+                </input>
+            </div>
           <Boton>Iniciar Sesion</Boton>
           <Boton onClick={() => props.cambiarRegistro(false)}>Registrarse</Boton>
-          <Button variant="primary">Hola mundo</Button>
+          <Button variant="secondary">Hola mundo</Button>
         </form>
      );
 }
